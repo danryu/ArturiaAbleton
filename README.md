@@ -21,7 +21,7 @@ This setup integrates the **Arturia KeyLab 88 (mk1)** with **Ableton Live 12** a
 
 ### 2.1 Rotary Encoders (P1–P10)
 
-| Hardware | Physical Label | Bank 1 (Analog Lab Pro) | Bank 2 (Ableton Live) | Mode (SearchFix) |
+| Hardware | Physical Label | Bank 1 (Analog Lab Pro) | Bank 2 (Ableton Live) | Mode (AbletonFix) |
 | :--- | :--- | :--- | :--- | :--- |
 | **P1** | L1 / Cutoff | CC 74 (Cutoff) | Macro 1 (Blue Hand) | Absolute (0–127) |
 | **P2** | L2 / Resonance | CC 71 (Resonance) | Macro 2 (Blue Hand) | Absolute (0–127) |
@@ -97,11 +97,11 @@ This setup integrates the **Arturia KeyLab 88 (mk1)** with **Ableton Live 12** a
 
 ---
 
-## 3. Template Difference: `SearchFix` vs Factory Default
+## 3. Template Difference: `AbletonFix` vs Factory Default
 
-The following table documents every parameter modification made to create the user template **`SearchFix`** (`SearchFix.keylab88.txt`) compared to Arturia's factory default template (`Factory Default`):
+The following table documents every parameter modification made to create the user template **`AbletonFix`** (`AbletonFix.keylab88`) compared to Arturia's factory default template (`Factory Default`):
 
-| Parameter / Key | Hardware Control | Factory Default | `SearchFix` Template | Technical Rationale |
+| Parameter / Key | Hardware Control | Factory Default | `AbletonFix` Template | Technical Rationale |
 | :--- | :--- | :--- | :--- | :--- |
 | **`49_3`** | Category Search CC | `114` | **`112`** | **Resolves CC Collision**: In factory firmware, both Category Search and Preset Search transmit on CC 114, making independent category filtering impossible. Moving Category Search to CC 112 isolates the two encoders. |
 | **`13_64`** | Global Knob Fix | `0` (or `1` in older MCC) | **`127` (ON)** | **Fixes Relative Encoder Bug**: Enables KeyLab's internal relative value filter, fixing the issue where relative encoders would stop transmitting after a single tick or jump erratically. |
@@ -131,7 +131,12 @@ All other parameters remain set to standard factory defaults:
 
 ### Template File Path
 ```text
-/Users/dan/Documents/SearchFix.keylab88.txt
+/Users/dan/Documents/AbletonFix.keylab88
+```
+Also available in the repository at:
+```text
+~/code/ArturiaAbleton/templates/AbletonFix.keylab88
+~/code/ArturiaAbleton/AbletonFix.keylab88
 ```
 
 ---
